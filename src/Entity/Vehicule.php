@@ -5,6 +5,14 @@ namespace App\Entity;
 use App\Repository\VehiculeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+/**
+ * @ORM\Entity
+ * @Vich\Uploadable
+ */
+
 /**
  * @ORM\Entity(repositoryClass=VehiculeRepository::class)
  */
@@ -36,6 +44,28 @@ class Vehicule
      * @ORM\Column(type="string", length=255)
      */
     private $immatriculation;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="vehicule", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /*
+     *
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     *
+    private $updatedAt; 
+
+    // ...
+    */
 
     public function getId(): ?int
     {
@@ -91,5 +121,35 @@ class Vehicule
     }
     public function __toString(){
         return $this->immatriculation;
+    }
+
+   // public function __construct(){
+   //     $this->updateAt = new \DateTime();
+   // }
+    
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        /*if ($image) {
+           
+            $this->updatedAt = new \DateTime('now');
+        }*/
+    }
+
+    public function getImageFile(): ?string
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 }

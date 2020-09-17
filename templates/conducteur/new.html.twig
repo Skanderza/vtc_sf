@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Conducteur{% endblock %}
+{% block title %}Ajouter Conducteur{% endblock %}
 
 {% block body %}
-    <h1>Create new Conducteur</h1>
+    <h1>Ajouter Conducteur</h1>
 
     {{ include('conducteur/_form.html.twig') }}
 
-    <a href="{{ path('conducteur_index') }}">back to list</a>
+    <a href="{{ path('conducteur_index') }}">liste</a>
 {% endblock %}

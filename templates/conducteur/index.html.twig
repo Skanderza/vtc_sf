@@ -21,17 +21,17 @@
                 <td>{{ conducteur.prenom }}</td>
                 <td>{{ conducteur.nom }}</td>
                 <td>
-                    <a href="{{ path('conducteur_show', {'id': conducteur.id}) }}">show</a>
-                    <a href="{{ path('conducteur_edit', {'id': conducteur.id}) }}">edit</a>
+                    <a href="{{ path('conducteur_show', {'id': conducteur.id}) }}">Voir</a>
+                    <a href="{{ path('conducteur_edit', {'id': conducteur.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Pas de conduteurs</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('conducteur_new') }}">Create new</a>
+    <a href="{{ path('conducteur_new') }}">Ajouter</a>
 {% endblock %}

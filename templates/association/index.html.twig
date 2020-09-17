@@ -17,8 +17,8 @@
             <tr>
                 <td>{{ association.id }}</td>
                 <td>
-                    <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
-                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
+                    <a href="{{ path('association_show', {'id': association.id}) }}">Voir</a>
+                    <a href="{{ path('association_edit', {'id': association.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -29,5 +29,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('association_new') }}">Create new</a>
+    <a href="{{ path('association_new') }}">Ajouter</a>
 {% endblock %}

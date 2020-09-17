@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 class VehiculeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -16,6 +18,7 @@ class VehiculeType extends AbstractType
             ->add('modele')
             ->add('couleur')
             ->add('immatriculation')
+            ->add('imagefile', VichImageType::class)
         ;
     }
 

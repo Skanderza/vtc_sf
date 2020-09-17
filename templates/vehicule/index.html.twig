@@ -25,17 +25,17 @@
                 <td>{{ vehicule.couleur }}</td>
                 <td>{{ vehicule.immatriculation }}</td>
                 <td>
-                    <a href="{{ path('vehicule_show', {'id': vehicule.id}) }}">show</a>
-                    <a href="{{ path('vehicule_edit', {'id': vehicule.id}) }}">edit</a>
+                    <a href="{{ path('vehicule_show', {'id': vehicule.id}) }}">Voir</a>
+                    <a href="{{ path('vehicule_edit', {'id': vehicule.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Pas de vehicules</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('vehicule_new') }}">Create new</a>
+    <a href="{{ path('vehicule_new') }}">Ajouter</a>
 {% endblock %}
