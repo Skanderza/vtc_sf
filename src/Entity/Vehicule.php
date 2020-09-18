@@ -9,10 +9,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity
  * @Vich\Uploadable
- */
-
-
-/**
  * @ORM\Entity(repositoryClass=VehiculeRepository::class)
  */
 class Vehicule
@@ -131,10 +127,6 @@ class Vehicule
     {
         $this->imageFile = $image;
 
-        /*if ($image) {
-           
-            $this->updatedAt = new \DateTime('now');
-        }*/
     }
 
     public function getImageFile(): ?string

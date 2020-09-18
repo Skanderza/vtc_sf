@@ -51,12 +51,21 @@ class ConducteurController extends AbstractController
     }*/
 
     /**
-     * @Route("/{id}", name="conducteur_show", methods={"GET"})
+     * @Route("/{id}", name="conducteur_show", methods={"GET","POST"})
      */
-    public function show(Conducteur $conducteur): Response
+    public function show(Conducteur $conducteur, Request $request): Response
     {
+        $form = $this->createForm(ConducteurType::class, $conducteur);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('conducteur_index');
+        }
         return $this->render('conducteur/show.html.twig', [
             'conducteur' => $conducteur,
+            'form' => $form->createView(),
         ]);
     }
 

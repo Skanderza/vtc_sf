@@ -77,6 +77,7 @@ class VehiculeController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 
     /**
      * @Route("/{id}", name="vehicule_delete", methods={"DELETE"})

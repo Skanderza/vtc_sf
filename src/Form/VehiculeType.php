@@ -18,7 +18,7 @@ class VehiculeType extends AbstractType
             ->add('modele')
             ->add('couleur')
             ->add('immatriculation')
-            ->add('imagefile', VichImageType::class)
+            ->add('imageFile', VichImageType::class)
         ;
     }
 
