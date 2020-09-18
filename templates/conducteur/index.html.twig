@@ -3,7 +3,8 @@
 {% block title %}Conducteur index{% endblock %}
 
 {% block body %}
-    <h1>Conducteur index</h1>
+<div class = 'container'>
+ <h1>Conducteur index</h1>
 
     <table class="table">
         <thead>
@@ -32,6 +33,6 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('conducteur_new') }}">Ajouter</a>
+{{ include('conducteur/_form.html.twig') }}
+</div>
 {% endblock %}

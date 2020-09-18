@@ -4,14 +4,13 @@ namespace App\Entity;
 
 use App\Repository\VehiculeRepository;
 use Doctrine\ORM\Mapping as ORM;
-
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
 /**
  * @ORM\Entity
  * @Vich\Uploadable
  */
+
 
 /**
  * @ORM\Entity(repositoryClass=VehiculeRepository::class)
@@ -52,7 +51,7 @@ class Vehicule
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="vehicule", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="vehicule_image", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
